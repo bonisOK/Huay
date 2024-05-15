@@ -56,7 +56,7 @@
       return; // Exit the function early
     }
     // Set the source of the image based on the currentIndex and random number
-    document.querySelector("#imageContainer img").src = randomNumber + "." + currentIndex + ".png";
+    document.querySelector("#imageContainer img").src = randomNumber + "." + currentIndex + ".PNG";
   }
 
   var done = false; // Flag to track if the game is done
@@ -64,7 +64,7 @@
   var currentIndex = 1; // Set the current index to 1
 
   // Display the first image from the set
-  document.querySelector("#imageContainer img").src = randomNumber + "." + currentIndex + ".png";
+  document.querySelector("#imageContainer img").src = randomNumber + "." + currentIndex + ".PNG";
 
   // Add click event listener to the image container
   document.getElementById("imageContainer").addEventListener("click", function() {
