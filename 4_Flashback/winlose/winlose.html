@@ -60,36 +60,36 @@
 
     if (rewardRanking === -1) {
         if (lastThreeDigitsRandom === lastThreeDigitsFirstPlace) {
-            img.src = 'ending/T3/T3.GIF';
+            img.src = 'ending/T3/T3.gif';
             setTimeout(function() {
-                img.src = 'ending/T3/T3loop.GIF';
+                img.src = 'ending/T3/T3loop.gif';
             }, delayTime);
         } else if (lastTwoDigitsRandom === lastTwoDigitsFirstPlace) {
-            img.src = 'ending/T2/T2.GIF';
+            img.src = 'ending/T2/T2.gif';
             setTimeout(function() {
-                img.src = 'ending/T2/T2loop.GIF';
+                img.src = 'ending/T2/T2loop.gif';
             }, delayTime);
         } else if (firstThreeDigitsRandom === firstThreeDigitsFirstPlace) {
-            img.src = 'ending/N3/N3.GIF';
+            img.src = 'ending/N3/N3.gif';
             setTimeout(function() {
-                img.src = 'ending/N3/N3loop.GIF';
+                img.src = 'ending/N3/N3loop.gif';
             }, delayTime);
         } else {
-            img.src = 'ending/fail.GIF';
+            img.src = 'ending/fail.gif';
         }
     } else {
         if (rewardRanking === 1) {
-            img.src = 'ending/1win/epic/1flashback.GIF';
+            img.src = 'ending/1win/epic/1flashback.gif';
             setTimeout(function() {
-                img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'win.GIF';
+                img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'win.gif';
                 setTimeout(function() {
-                    img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'winloop.GIF';
+                    img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'winloop.gif';
                 }, delayTime);
             }, 10000); // Adjust the delay time as needed
         } else {
-            img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'win.GIF';
+            img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'win.gif';
             setTimeout(function() {
-                img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'winloop.GIF';
+                img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'winloop.gif';
             }, delayTime);
         }
     }
