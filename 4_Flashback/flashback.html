@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('paperBG.gif');
+    background-image: url('paperBG.GIF');
     background-size: cover;
   }
   #imageContainer {
@@ -45,11 +45,11 @@
     // If currentIndex exceeds the maximum number of images, set it back to 1
     if (currentIndex > 3) {
       done = true;
-      // Set the source of the image to "5_cutscenes.gif"
-      document.querySelector("#imageContainer img").src = "5_cutscenes.gif";
+      // Set the source of the image to "5_cutscenes.GIF"
+      document.querySelector("#imageContainer img").src = "5_cutscenes.GIF";
       document.querySelector("#imageContainer img").style.maxWidth = "90%";
       document.querySelector("#imageContainer img").style.maxHeight = "90%";
-      // Check if "5_cutscenes.gif" has been played and redirect to winlose.html
+      // Check if "5_cutscenes.GIF" has been played and redirect to winlose.html
       setTimeout(function() {
         window.location.href = "winlose/winlose.html";
       }, 5290); // Adjust the delay (in milliseconds) as needed

@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url('Opening/paperBG.gif'); /* Set background image */
+    background-image: url('Opening/paperBG.GIF'); /* Set background image */
     background-size: cover; /* Cover the entire viewport */
     display: flex;
     justify-content: center;
@@ -43,10 +43,10 @@
 </head>
 <body>
   <div id="cutscene-container">
-    <img class="cutscene-image" src="Opening/1.png" alt="Image 1">
-    <img class="cutscene-image" src="Opening/2.png" alt="Image 2">
-    <img class="cutscene-image" src="Opening/3.png" alt="Image 3">
-    <img class="cutscene-image" src="Opening/4.png" alt="Image 4">
+    <img class="cutscene-image" src="Opening/1.PNG" alt="Image 1">
+    <img class="cutscene-image" src="Opening/2.PNG" alt="Image 2">
+    <img class="cutscene-image" src="Opening/3.PNG" alt="Image 3">
+    <img class="cutscene-image" src="Opening/4.PNG" alt="Image 4">
   </div>
 
   <script>
@@ -59,8 +59,8 @@
         images[currentImageIndex].classList.add('show');
         currentImageIndex++;
       } else if (currentImageIndex === images.length) {
-        // On the fifth click, change the fourth image to "4new.png"
-        images[currentImageIndex - 1].src = 'Opening/4new.png';
+        // On the fifth click, change the fourth image to "4new.PNG"
+        images[currentImageIndex - 1].src = 'Opening/4new.PNG';
         images[currentImageIndex - 1].classList.add('show'); // Show the new image
         currentImageIndex++;
       } else if (currentImageIndex > images.length) {
