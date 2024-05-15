@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lottery Result</title>
+<style>
+    body {
+        background-image: url('paperBG.gif');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+</style>
+</head>
+<body>
+<script>
+    // Define winning numbers for each reward ranking
+    var firstPlaceNumber = 123456;
+    var winningNumbers = [
+        firstPlaceNumber, // First place
+        789012, // Second place
+        345678, // Third place
+        901234, // Fourth place
+        567890  // Fifth place
+    ];
+
+    // Generate a random number
+    var randomNumber = Math.floor(Math.random() * 1000000);
+    //var randomNumber = 123456;
+
+    
+
+    // Define delay time
+    var delayTime = 8320;
+
+    var rewardRanking = -1; // Initialize reward ranking to indicate no win
+    for (var i = 0; i < winningNumbers.length; i++) {
+        if (randomNumber === winningNumbers[i]) {
+            rewardRanking = i + 1; // Set reward ranking (1-based index)
+            break;
+        }
+    }
+    var img = document.createElement('img');
+    var lastThreeDigitsRandom = randomNumber % 1000;
+    var lastThreeDigitsFirstPlace = firstPlaceNumber % 1000;
+    var lastTwoDigitsRandom = randomNumber % 100;
+    var lastTwoDigitsFirstPlace = firstPlaceNumber % 100;
+    var firstThreeDigitsRandom = Math.floor(randomNumber / 1000);
+    var firstThreeDigitsFirstPlace = Math.floor(firstPlaceNumber / 1000);
+
+
+    if (rewardRanking === -1) {
+        if (lastThreeDigitsRandom === lastThreeDigitsFirstPlace) {
+            img.src = 'ending/T3/T3.gif';
+            setTimeout(function() {
+                img.src = 'ending/T3/T3loop.gif';
+            }, delayTime);
+        } else if (lastTwoDigitsRandom === lastTwoDigitsFirstPlace) {
+            img.src = 'ending/T2/T2.gif';
+            setTimeout(function() {
+                img.src = 'ending/T2/T2loop.gif';
+            }, delayTime);
+        } else if (firstThreeDigitsRandom === firstThreeDigitsFirstPlace) {
+            img.src = 'ending/N3/N3.gif';
+            setTimeout(function() {
+                img.src = 'ending/N3/N3loop.gif';
+            }, delayTime);
+        } else {
+            img.src = 'ending/fail.gif';
+        }
+    } else {
+        if (rewardRanking === 1) {
+            img.src = 'ending/1win/epic/1flashback.gif';
+            setTimeout(function() {
+                img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'win.gif';
+                setTimeout(function() {
+                    img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'winloop.gif';
+                }, delayTime);
+            }, 10000); // Adjust the delay time as needed
+        } else {
+            img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'win.gif';
+            setTimeout(function() {
+                img.src = 'ending/' + rewardRanking + 'win/' + rewardRanking + 'winloop.gif';
+            }, delayTime);
+        }
+    }
+    img.alt = 'Lottery Result';
+    document.body.appendChild(img);
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Sequential Images</title>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('paperBG.gif');
+    background-size: cover;
+  }
+  #imageContainer {
+    position: relative;
+    text-align: center; /* Aligning the image horizontally */
+  }
+  img {
+    max-width: 80%;
+    max-height: 80%;
+    display: inline-block; /* Ensuring the image is displayed as an inline block */
+  }
+</style>
+</head>
+<body>
+
+<!-- Container to display images -->
+<div id="imageContainer">
+  <img src="" alt="Image">
+</div>
+
+<script>
+  // Function to get a random number between min and max (inclusive)
+  function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  // Function to display the next image from the current set
+  function displayNextImage() {
+    // Increment the current index
+    currentIndex++;
+    // If currentIndex exceeds the maximum number of images, set it back to 1
+    if (currentIndex > 3) {
+      done = true;
+      // Set the source of the image to "5_cutscenes.gif"
+      document.querySelector("#imageContainer img").src = "5_cutscenes.gif";
+      document.querySelector("#imageContainer img").style.maxWidth = "90%";
+      document.querySelector("#imageContainer img").style.maxHeight = "90%";
+      // Check if "5_cutscenes.gif" has been played and redirect to winlose.html
+      setTimeout(function() {
+        window.location.href = "winlose/winlose.html";
+      }, 5290); // Adjust the delay (in milliseconds) as needed
+      return; // Exit the function early
+    }
+    // Set the source of the image based on the currentIndex and random number
+    document.querySelector("#imageContainer img").src = randomNumber + "." + currentIndex + ".png";
+  }
+
+  var done = false; // Flag to track if the game is done
+  var randomNumber = getRandomNumber(1, 6); // Generate a random number between 1 and 6
+  var currentIndex = 1; // Set the current index to 1
+
+  // Display the first image from the set
+  document.querySelector("#imageContainer img").src = randomNumber + "." + currentIndex + ".png";
+
+  // Add click event listener to the image container
+  document.getElementById("imageContainer").addEventListener("click", function() {
+    if (!done) {
+      displayNextImage();
+    }
+  });
+</script>
+
+</body>
+</html>
